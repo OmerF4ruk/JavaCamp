@@ -1,27 +1,24 @@
 package kodlamaio.hrms.entities.concretes;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name="departments")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Department {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    String id;
+    private int id;
 
-    @Column(name="department_name")
-    String department_name;
+    @Column(name="department")
+    private String department_name;
 
-    public Department() {
-
-    }
-
-    public Department(String id, String department_name) {
-        this.id = id;
-        this.department_name = department_name;
-    }
 
 }
